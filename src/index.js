@@ -37,17 +37,15 @@ const MORSE_TABLE = {
     '-----':  '0',
 };
 
-function decode(expr) {
+function decode(string) {
     // write your solution here
-    return expr
-    .split ('  ')
-    .map(
-        a => a
-        .split(' ')
-        .map(
-            b => ref [b]
-        ).join('')
-    ).join(' ');
+    let outputString = ''
+    let newArray = string.split(' ')
+    for (let i = 0; i < newArray.length; i++){
+        outputString +=
+        MORSE_TABLE[newArray[i]]
+    }
+    return outputString
 }
 
 module.exports = {
