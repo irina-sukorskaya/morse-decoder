@@ -37,16 +37,20 @@ const MORSE_TABLE = {
     '-----':  '0',
 };
 
-function decode(string) {
     // write your solution here
-    let outputString = ''
-    let newArray = string.split(' ')
-    for (let i = 0; i < newArray.length; i++){
-        outputString +=
-        MORSE_TABLE[newArray[i]]
+    decodeMorse = function(decode) {
+        outPut = "";
+    
+        for (var i = 0; i < decode.split(" ").length; i++) {
+            if (i === "   ") {
+                outPut += " ";
+            } else {
+                outPut += MORSE_TABLE[decode.split(" ")[i]];
+            }
+    
+        }
+        return outPut;
     }
-    return outputString
-}
 
 module.exports = {
     decode
