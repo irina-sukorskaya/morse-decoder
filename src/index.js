@@ -39,17 +39,27 @@ const MORSE_TABLE = {
 
 function decode(expr) {
     // write your solution here
-    outPut = "";
-
-    for (var i = 0; i < decode.split(" ").length; i++) {
-        if (i === "   ") {
-            outPut += " ";
-        } else {
-            outPut += MORSE_TABLE[decode.split(" ")[i]];
+    function textToMorse(t)
+{
+    var ss="";
+    expr=expr.toUpperCase();
+    l=expr.length;
+    for (var i=0; i<l; i++)
+    {
+        c=expr.slice(i, i+1);
+        if (c==" ")
+        {
+            ss+="   "
         }
-
+        else
+        {
+            ss+=inp[0][c] + " ";
+        }
     }
-    return outPut;
+    return (ss);
+}
+
+
 }
 
 
